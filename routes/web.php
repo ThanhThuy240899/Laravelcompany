@@ -20,9 +20,11 @@ Route::get('/', function () {
 });
 
 
+
 Route::prefix('com')->group(function() {
-    Route::get('/companyprofile', [CompanyController::class, 'showProfile' ])->name('com.profile');
-    
-    Route::get('/conmpanyupdate', [CompanyController::class, 'showUpdate'])->name('com.update');
+    Route::get('/companyprofile', [CompanyController::class, 'showProfile'])->name('com.profile');
+    Route::get('/companyupdate', [CompanyController::class, 'showUpdate'])->name('com.update');
     Route::post('/createsubmit', [CompanyController::class, 'createSubmit'])->name('com.create');
+    Route::post('/companyprofile', [CompanyController::class, 'searchsubmit'])->name('com.search');
 });
+
